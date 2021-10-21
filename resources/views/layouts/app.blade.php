@@ -52,7 +52,7 @@
         }
 
         window.addEventListener('load', (event) => {
-            setInterval(scrollDown, 1000);
+         document.getElementById('chat').scrollTop =  document.getElementById('chat').scrollHeight
               });
 
  

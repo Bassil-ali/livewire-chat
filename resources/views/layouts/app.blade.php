@@ -7,7 +7,6 @@
 
         <title>{{ config('app.name', 'Laravel') }}</title>
 
-       
         @livewireStyles
 
 
@@ -28,9 +27,7 @@
         <script src="{{ asset('js/chat.js') }}" defer></script>
     </head>
     <body class="font-sans antialiased">
-
         <div class="min-h-screen bg-gray-100">
-            @livewireScripts
             @include('layouts.navigation')
 
             <!-- Page Heading -->
@@ -46,4 +43,18 @@
             </main>
         </div>
     </body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    @livewireScripts
+
+    <script>
+        function scrollDown() {
+         document.getElementById('chat').scrollTop =  document.getElementById('chat').scrollHeight
+        }
+
+        window.addEventListener('load', (event) => {
+            setInterval(scrollDown, 1000);
+              });
+
+ 
+          </script>
 </html>

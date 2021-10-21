@@ -2,7 +2,7 @@
     <div class="container">
         <h3 class=" text-center">
 
-            @if (auth()->user()->email == 'samir.gamal77@yahoo.com')
+            @if (auth()->user()->email == 'baselali337@gmail.com')
                 <a class="btn btn-primary" href="{{ Url('delete_chat') }}">حذف المحادثة</a>
             @endif
            Chat System 
@@ -46,7 +46,8 @@
                     <div class="type_msg">
                         <div class="input_msg_write">
                             <form wire:submit.prevent="sendMessage">
-                                <input onkeydown='scrollDown()' wire:model.defer="messageText" type="text"
+                                @error('messageText') <span style="text-align: center;color:red">{{ $message }}</span> @enderror
+                                <input id="null" onkeydown='scrollDown()' wire:model.defer="messageText" type="text"
                                     class="write_msg" placeholder="اكتب رسالتك" />
                                 <button class="msg_send_btn" type="submit">ارسال</button>
                             </form>
